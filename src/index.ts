@@ -185,7 +185,6 @@ export const getInflationData = (
 ) => {
   const { data, years } = datasets[dataset]!;
 
-  // TODO: closest year
   const fromYear = data[from] ? from : years[0];
   const fromPeriod = 0; // Annual
   const fromValue = data[fromYear][fromPeriod];
@@ -275,7 +274,7 @@ const cuppy = () => {
 
         if (hintDisplay === "tooltip") {
           el.innerText = formattedValueWithYear;
-          el.title = formattedAdjustedValueWithYear; // TODO: mobile
+          el.title = formattedAdjustedValueWithYear;
         } else {
           el.innerText = withHint(
             formattedValueWithYear,

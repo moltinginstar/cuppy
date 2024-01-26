@@ -11,17 +11,26 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "tsc",
-    "prepare": "husky install"
-  },
-  "devDependencies": {
-    "husky": "^8.0.3",
-    "lint-staged": "^15.2.0",
-    "prettier": "^3.2.4",
-    "typescript": "^5.2.2"
+    "build": "tsc && npm run size",
+    "prepare": "husky install",
+    "size": "size-limit"
   },
   "lint-staged": {
     "*.{ts,js,css,md}": "prettier --write"
+  },
+  "size-limit": [
+    {
+      "path": "lib/index.js",
+      "limit": "1.5 kB"
+    }
+  ],
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^11.0.2",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "prettier": "^3.2.4",
+    "size-limit": "^11.0.2",
+    "typescript": "^5.3.3"
   },
   "repository": "https://github.com/moltinginstar/cuppy.git",
   "homepage": "https://github.com/moltinginstar/cuppy",
