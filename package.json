@@ -1,0 +1,47 @@
+{
+  "name": "@cuppy/core",
+  "description": "A lightweight currency display component with automatic inflation adjustment.",
+  "author": "moltinginstar",
+  "version": "1.0.0",
+  "type": "module",
+  "browser": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "prettier": "^3.2.4",
+    "typescript": "^5.2.2"
+  },
+  "lint-staged": {
+    "*.{ts,js,css,md}": "prettier --write"
+  },
+  "repository": "https://github.com/moltinginstar/cuppy.git",
+  "homepage": "https://github.com/moltinginstar/cuppy",
+  "bugs": "https://github.com/moltinginstar/cuppy/issues",
+  "keywords": [
+    "currency",
+    "conversion",
+    "inflation",
+    "display",
+    "dollars",
+    "component",
+    "typescript",
+    "component",
+    "lightweight",
+    "fast",
+    "intl",
+    "i18n",
+    "internationalization",
+    "NumberFormat",
+    "CPI",
+    "CPI-U"
+  ]
+}
