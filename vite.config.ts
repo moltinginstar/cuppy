@@ -1,6 +1,7 @@
 import { resolve } from "path";
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
+import checker from "vite-plugin-checker";
 import camelCase from "camelcase";
 import packageJson from "./package.json";
 
@@ -25,5 +26,10 @@ export default defineConfig({
       },
     },
   },
-  plugins: [dts({ rollupTypes: true })],
+  plugins: [
+    dts({ rollupTypes: true }),
+    checker({
+      typescript: true,
+    }),
+  ],
 });
