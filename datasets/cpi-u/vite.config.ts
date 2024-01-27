@@ -5,13 +5,11 @@ import checker from "vite-plugin-checker";
 import camelCase from "camelcase";
 import packageJson from "./package.json";
 
-const packageName =
-  packageJson.name.split("/")[0]?.replace("@", "") || packageJson.name; // "cuppy"
+const packageName = packageJson.name;
 
 export default defineConfig({
   build: {
     target: "es6", // Same as in tsconfig.json
-    outDir: "lib",
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
       formats: ["es", "umd"],

@@ -1,0 +1,52 @@
+{
+  "name": "@cuppy/core",
+  "description": "A lightweight currency display component with automatic inflation adjustment.",
+  "author": "moltinginstar",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist/cuppy.umd.cjs",
+  "module": "dist/cuppy.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.umd.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "@types/node": "*",
+    "typescript": "*",
+    "vite": "*",
+    "vite-plugin-checker": "*",
+    "vite-plugin-dts": "*"
+  },
+  "repository": "https://github.com/moltinginstar/cuppy.git",
+  "homepage": "https://github.com/moltinginstar/cuppy",
+  "bugs": "https://github.com/moltinginstar/cuppy/issues",
+  "keywords": [
+    "currency",
+    "conversion",
+    "inflation",
+    "display",
+    "dollars",
+    "component",
+    "typescript",
+    "component",
+    "lightweight",
+    "fast",
+    "intl",
+    "i18n",
+    "internationalization",
+    "NumberFormat",
+    "CPI",
+    "CPI-U"
+  ]
+}

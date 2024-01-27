@@ -1,4 +1,4 @@
-import data from "./data.json";
+import data from "../data/data.json";
 
 export default (cuppy: { datasets: Record<string, any> }) => {
   cuppy.datasets["cpiU"] = {
