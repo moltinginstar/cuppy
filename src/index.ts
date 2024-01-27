@@ -41,8 +41,6 @@ export type CuppyOptions = {
   inlineHintFormatter: (value: string, hint: string) => string;
 } & PrecisionOptions;
 
-export type CuppyDOMStringMap = Partial<Record<keyof CuppyOptions, string>>;
-
 const defaults: CuppyOptions = {
   hint: "none",
   hintDisplay: "tooltip",
@@ -109,7 +107,7 @@ const withYear = (
 // Cache the Intl.NumberFormat instances for performance.
 const formatterCache: Record<string, Intl.NumberFormat> = {};
 
-const formatCurrency = (value: number, options: CuppyDOMStringMap) => {
+const formatCurrency = (value: number, options: Partial<CuppyOptions>) => {
   const locale =
     options.locale ?? defaults.locale ?? (navigator.languages as string[]);
 
@@ -119,9 +117,7 @@ const formatCurrency = (value: number, options: CuppyDOMStringMap) => {
 
   const useGrouping = defaults.useGrouping ?? options.useGrouping != null;
 
-  const signDisplay =
-    (options.signDisplay as CuppyOptions["signDisplay"]) ||
-    defaults.signDisplay;
+  const signDisplay = options.signDisplay || defaults.signDisplay;
 
   const precisionMode = options.precisionMode || defaults.precisionMode;
 
@@ -236,8 +232,6 @@ const cuppy = () => {
   const cuppies = document.querySelectorAll<HTMLElement>("[data-cuppy]");
   cuppies.forEach((el) => {
     const options = el.dataset;
-    if (!options.cuppy) return;
-
     options.value ??= el.innerText;
 
     const value = +options.value;
