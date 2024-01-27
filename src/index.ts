@@ -19,6 +19,7 @@ type PrecisionOptions =
     };
 
 export type CuppyOptions = {
+  value?: number;
   from?: number;
   to?: number;
   hint: "none" | "from" | "to";
@@ -37,8 +38,10 @@ export type CuppyOptions = {
   hintYearDisplay: YearDisplay;
   inflationDataset: InflationDatasetAlias;
   yearFormatter: (value: string, year: number) => string;
-  hintFormatter: (value: string, hint: string) => string;
+  inlineHintFormatter: (value: string, hint: string) => string;
 } & PrecisionOptions;
+
+export type CuppyDOMStringMap = Partial<Record<keyof CuppyOptions, string>>;
 
 const defaults: CuppyOptions = {
   hint: "none",
@@ -50,7 +53,7 @@ const defaults: CuppyOptions = {
   precisionMode: "sigfigs",
   inflationDataset: "cpiU",
   yearFormatter: (value, year) => `${value} (${year})`,
-  hintFormatter: (value, hint) => `${value} [${hint}]`,
+  inlineHintFormatter: (value, hint) => `${value} [${hint}]`,
 };
 
 type DatasetYear = string;
@@ -77,7 +80,7 @@ const registerDataset = (plugin: DatasetPlugin) => {
 const currentYear = new Date().getFullYear();
 
 const withHint = (value: string, hint: string) => {
-  return defaults.hintFormatter(value, hint);
+  return defaults.inlineHintFormatter(value, hint);
 };
 
 const withYear = (
@@ -106,7 +109,7 @@ const withYear = (
 // Cache the Intl.NumberFormat instances for performance.
 const formatterCache: Record<string, Intl.NumberFormat> = {};
 
-const formatCurrency = (value: number, options: Partial<CuppyOptions>) => {
+const formatCurrency = (value: number, options: CuppyDOMStringMap) => {
   const locale =
     options.locale ?? defaults.locale ?? (navigator.languages as string[]);
 
@@ -116,7 +119,9 @@ const formatCurrency = (value: number, options: Partial<CuppyOptions>) => {
 
   const useGrouping = defaults.useGrouping ?? options.useGrouping != null;
 
-  const signDisplay = options.signDisplay || defaults.signDisplay;
+  const signDisplay =
+    (options.signDisplay as CuppyOptions["signDisplay"]) ||
+    defaults.signDisplay;
 
   const precisionMode = options.precisionMode || defaults.precisionMode;
 
@@ -231,7 +236,11 @@ const cuppy = () => {
   const cuppies = document.querySelectorAll<HTMLElement>("[data-cuppy]");
   cuppies.forEach((el) => {
     const options = el.dataset;
-    const value = +el.innerText;
+    if (!options.cuppy) return;
+
+    options.value ??= el.innerText;
+
+    const value = +options.value;
 
     const from = +(options.from || defaults.from || currentYear);
     const to = +(options.to || defaults.to || currentYear);
@@ -280,6 +289,7 @@ const cuppy = () => {
             formattedValueWithYear,
             formattedAdjustedValueWithYear,
           );
+          el.removeAttribute("title");
         }
       } else if (hint === "from") {
         const formattedValue = formatCurrency(value, options);
@@ -307,6 +317,7 @@ const cuppy = () => {
             formattedAdjustedValueWithYear,
             formattedValueWithYear,
           );
+          el.removeAttribute("title");
         }
       } else {
         const formattedAdjustedValue = formatCurrency(adjustedValue, options);
@@ -315,6 +326,7 @@ const cuppy = () => {
           requestedYear: to,
           yearDisplay,
         });
+        el.removeAttribute("title");
       }
     } else {
       const formattedValue = formatCurrency(value, options);
@@ -322,6 +334,7 @@ const cuppy = () => {
         year: from,
         yearDisplay,
       });
+      el.removeAttribute("title");
     }
   });
 };

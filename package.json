@@ -4,33 +4,34 @@
   "author": "moltinginstar",
   "version": "1.0.0",
   "type": "module",
-  "browser": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "./lib/cuppy.umd.cjs",
+  "module": "./lib/cuppy.js",
+  "types": "./lib/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "require": "./lib/index.umd.cjs"
+    }
+  },
   "files": [
     "lib"
   ],
   "license": "MIT",
   "scripts": {
-    "build": "tsc && npm run size",
-    "prepare": "husky install",
-    "size": "size-limit"
+    "build": "tsc && vite build",
+    "prepare": "husky install"
   },
   "lint-staged": {
     "*.{ts,js,css,md}": "prettier --write"
   },
-  "size-limit": [
-    {
-      "path": "lib/index.js",
-      "limit": "1.5 kB"
-    }
-  ],
   "devDependencies": {
-    "@size-limit/preset-small-lib": "^11.0.2",
+    "camelcase": "^8.0.0",
     "husky": "^9.0.6",
     "lint-staged": "^15.2.0",
     "prettier": "^3.2.4",
-    "size-limit": "^11.0.2",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "vite": "^5.0.12",
+    "vite-plugin-dts": "^3.7.2"
   },
   "repository": "https://github.com/moltinginstar/cuppy.git",
   "homepage": "https://github.com/moltinginstar/cuppy",
