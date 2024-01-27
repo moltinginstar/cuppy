@@ -17,6 +17,16 @@
         <h1>Cuppy</h1>
       </header>
 
+      <div class="to-year-slider">
+        <label id="min-label" for="to-year"></label>
+
+        <input type="range" id="to-year" list="year-values" />
+
+        <label id="max-label" for="to-year"></label>
+      </div>
+
+      <datalist id="year-values"></datalist>
+
       <p>
         From
         <a
@@ -31,7 +41,6 @@
         <span
           data-cuppy
           data-from="1969"
-          data-to="2024"
           data-hint-display="inline"
           data-year-display="always"
           data-hint-year-display="ifFallback"
@@ -49,7 +58,6 @@
         <span
           data-cuppy
           data-from="1969"
-          data-to="2022"
           data-currency-style="symbol"
           data-precision-mode="decimalPlaces"
           data-max-digits="2"
@@ -64,7 +72,6 @@
         <span
           data-cuppy
           data-from="1969"
-          data-to="2022"
           data-currency-style="name"
           data-number-style="compactShort"
           data-sign-display="exceptZero"
@@ -74,11 +81,16 @@
 
       <p class="sample">
         The amount grows to
-        <span
-          data-cuppy
-          data-from="1969"
-          data-to="2022"
-          data-year-display="exceptCurrent"
+        <span data-cuppy data-from="1969" data-year-display="exceptCurrent"
+          >28000000000</span
+        >
+        if the costs for related projects such as Project Gemini and the robotic
+        Ranger, Surveyor, and Lunar Orbiter programs are included.
+      </p>
+
+      <p class="sample">
+        The amount grows to
+        <span data-cuppy data-from="1969" data-year-display="exceptCurrent"
           >28000000000</span
         >
         if the costs for related projects such as Project Gemini and the robotic

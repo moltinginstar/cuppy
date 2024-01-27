@@ -4,9 +4,9 @@
   "author": "moltinginstar",
   "version": "1.0.0",
   "type": "module",
-  "main": "./lib/cuppy.umd.cjs",
-  "module": "./lib/cuppy.js",
-  "types": "./lib/index.d.ts",
+  "main": "lib/cuppy.umd.cjs",
+  "module": "lib/cuppy.js",
+  "types": "lib/index.d.ts",
   "exports": {
     ".": {
       "import": "./lib/index.js",

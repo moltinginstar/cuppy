@@ -63,6 +63,19 @@ h1 {
   filter: drop-shadow(0 0 2.5em rgb(58 130 92));
 }
 
+.to-year-slider {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  inline-size: 100%;
+  accent-color: rgb(58 130 92);
+  margin-block: 2em;
+}
+
+#to-year {
+  flex: 1;
+}
+
 .sample {
   color: #aaaaaa;
 }
