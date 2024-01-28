@@ -1,0 +1,55 @@
+name: Publish Package
+
+on:
+  workflow_dispatch:
+    inputs:
+      package:
+        description: Package to release
+        required: true
+        type: choice
+        default: "core"
+        options:
+          - "core"
+          - "datasets/cpi-u"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18]
+
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@v3
+  
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+  
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: pnpm
+  
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Go to package
+        run: cd $GITHUB_WORKSPACE/${{ github.event.inputs.package }}
+
+      - name: Build package
+        run: pnpm run build
+
+      - name: Dry run publishing
+        run: pnpm publish --access public --dry-run
+
+      - name: Publish to npm
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+          pnpm publish --access public
+
+      - name: Create a release on GitHub
+        uses: ncipollo/release-action@v1
