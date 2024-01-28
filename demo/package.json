@@ -9,10 +9,14 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "deploy": "pnpm run build && gh-pages -d dist",
     "clean": "rimraf dist"
   },
   "dependencies": {
     "@cuppy/core": "workspace:*",
     "@cuppy/cpi-u": "workspace:*"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
   }
 }
