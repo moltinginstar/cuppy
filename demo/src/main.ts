@@ -1,4 +1,6 @@
 import "./style.css";
+// TODO: fix root dev script
+// TODO: VSCode doesn't recognize these until you reload the window
 import cuppy from "@cuppy/core";
 import cpiU from "@cuppy/cpi-u";
 

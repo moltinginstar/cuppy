@@ -19,14 +19,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "vite build --watch",
-    "build": "vite build"
-  },
-  "devDependencies": {
-    "@types/node": "*",
-    "typescript": "*",
-    "vite": "*",
-    "vite-plugin-checker": "*",
-    "vite-plugin-dts": "*"
+    "build": "vite build",
+    "clean": "rimraf dist"
   },
   "peerDependencies": {
     "@cuppy/core": "workspace:*"
