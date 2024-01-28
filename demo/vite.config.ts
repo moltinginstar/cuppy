@@ -1,8 +1,9 @@
 import { defineConfig } from "vite";
 import checker from "vite-plugin-checker";
+import { name as packageName } from "../package.json";
 
 export default defineConfig({
-  base: "/cuppy/",
+  base: `/${packageName}/`,
   build: {
     target: "es6", // Same as in tsconfig.json
   },
