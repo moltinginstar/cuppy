@@ -15,7 +15,7 @@
     "prepare": "husky"
   },
   "devDependencies": {
-    "@types/node": "^18.19.10",
+    "@types/node": "^20.11.8",
     "camelcase": "^8.0.0",
     "husky": "^9.0.6",
     "lint-staged": "^15.2.0",
