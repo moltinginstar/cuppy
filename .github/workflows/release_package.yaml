@@ -22,23 +22,25 @@ jobs:
     steps:
       - name: Clone repo
         uses: actions/checkout@v3
-  
+
       - name: Set up pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 8
-  
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: pnpm
-  
+
       - name: Install dependencies
         run: pnpm install
 
       - name: Go to package
-        run: cd $GITHUB_WORKSPACE/${{ github.event.inputs.package }}
+        env:
+          PACKAGE_PATH: ${{ github.event.inputs.package }}
+        run: cd $GITHUB_WORKSPACE/$PACKAGE_PATH
 
       - name: Build package
         run: pnpm run build
