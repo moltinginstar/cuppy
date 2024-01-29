@@ -17,6 +17,13 @@
     "dist"
   ],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/moltinginstar/cuppy.git",
+    "directory": "datasets/cpi-u"
+  },
+  "homepage": "https://moltinginstar.tech/cuppy",
+  "bugs": "https://github.com/moltinginstar/cuppy/issues",
   "scripts": {
     "dev": "vite build --watch",
     "build": "vite build",

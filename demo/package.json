@@ -5,6 +5,13 @@
   "version": "1.0.0",
   "type": "module",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/moltinginstar/cuppy.git",
+    "directory": "demo"
+  },
+  "homepage": "https://moltinginstar.tech/cuppy",
+  "bugs": "https://github.com/moltinginstar/cuppy/issues",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
