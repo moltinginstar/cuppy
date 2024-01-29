@@ -18,7 +18,8 @@
   ],
   "license": "MIT",
   "repository": {
-    "url": "https://github.com/moltinginstar/cuppy.git",
+    "type": "git",
+    "url": "git+https://github.com/moltinginstar/cuppy.git",
     "directory": "core"
   },
   "homepage": "https://moltinginstar.tech/cuppy",
