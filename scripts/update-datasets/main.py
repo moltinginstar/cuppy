@@ -1,6 +1,7 @@
 import asyncio
 import io
 import json
+import subprocess
 from datetime import datetime
 from pathlib import Path
 
@@ -34,6 +35,7 @@ HEADERS = {
 
 async def get_dataset(client: httpx.AsyncClient, url: str) -> pd.DataFrame:
   """Download and parse a time series from the BLS website."""
+
   response = await client.get(url, headers=HEADERS)
   data = pd.read_csv(io.BytesIO(response.content), sep="\s+", index_col=0)
 
@@ -42,6 +44,7 @@ async def get_dataset(client: httpx.AsyncClient, url: str) -> pd.DataFrame:
 
 def format_annual_data(x: pd.DataFrame) -> dict:
   """Convert data for a single year into a period-indexed dictionary."""
+
   data = x.set_index("period").squeeze().to_json(orient="index")
 
   return json.loads(data)
@@ -53,6 +56,7 @@ async def update_package_data(
     dataset_details: dict[str, str],
 ) -> None:
   """Download, process, and write a dataset to a package."""
+
   data = await get_dataset(client, dataset_details["url"])
   dataset = data.loc[dataset_name, dataset_details["columns"]]
 
@@ -68,6 +72,7 @@ async def update_package_data(
 
 def update_package_metadata(dataset_package: str) -> None:
   """Update the package metadata."""
+
   package_dir = PACKAGES_DIR / dataset_package
   package_json = package_dir / "package.json"
 
@@ -89,9 +94,15 @@ async def update_package(
     dataset_details: dict[str, str],
 ) -> None:
   """Update a package."""
+
+  dataset_package = dataset_details["package"]
   try:
     await update_package_data(client, dataset_name, dataset_details)
-    update_package_metadata(dataset_details["package"])
+    update_package_metadata(dataset_package)
+
+    subprocess.run(["git", "add", str(PACKAGES_DIR / dataset_package)], shell=True, check=True)
+    # "feat" is how semantic-release knows to create a release
+    subprocess.run(["git", "commit", "-m", f"feat: update {dataset_package}"], shell=True, check=True)
   except Exception as e:
     print(f"Failed to update {dataset_name}: {e}")
 
