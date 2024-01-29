@@ -48,6 +48,8 @@ jobs:
         run: pnpm --recursive exec semantic-release
 
       - name: Deploy website
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           cd $GITHUB_WORKSPACE/demo
           pnpm run deploy
