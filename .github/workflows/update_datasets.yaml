@@ -1,0 +1,49 @@
+name: Update Datasets
+
+on:
+  schedule:
+    - cron: "0 0 31 1 *"
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        python-version: ["3.11"]
+        poetry-version: ["1.7.1"]
+
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@v4
+
+      - name: Go to update script
+        run: cd $GITHUB_WORKSPACE/scripts/update-datasets
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Set up Poetry
+        uses: abatilo/actions-poetry@v2
+        with:
+          poetry-version: ${{ matrix.poetry-version }}
+
+      - name: Install dependencies
+        run: poetry install
+
+      - name: Update datasets
+        run: poetry run python main.py
+
+      - name: Commit changes
+        # TODO: create and merge PR?
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email ""
+
+          git commit -am "feat: update datasets"
+          git push
+
+      - name: Release
+        uses: ./.github/workflows/release.yaml

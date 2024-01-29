@@ -1,0 +1,54 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write # To be able to publish a GitHub release
+      issues: write # To be able to comment on released issues
+      pull-requests: write # To be able to comment on released pull requests
+      id-token: write # To enable use of OIDC for npm provenance
+
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Verify provenance
+        run: pnpm audit signatures
+
+      - name: Build
+        run: pnpm run build
+
+      - name: Publish packages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        # TODO: workspace support
+        run: pnpm --recursive exec semantic-release
+
+      - name: Deploy website
+        run: |
+          cd $GITHUB_WORKSPACE/demo
+          pnpm run deploy
