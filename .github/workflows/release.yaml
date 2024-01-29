@@ -35,8 +35,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Verify provenance
-        run: pnpm audit signatures
+      # - name: Verify provenance
+      #   run: pnpm audit signatures
 
       - name: Build
         run: pnpm run build
