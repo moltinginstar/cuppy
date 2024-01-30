@@ -1,6 +1,6 @@
 {
   "name": "@cuppy/cpi-u",
-  "description": "The CUUR0000SA0 dataset.",
+  "description": "The CUUR0000SA0 dataset for Cuppy.",
   "author": "moltinginstar",
   "version": "1.0.0",
   "type": "module",
@@ -31,5 +31,12 @@
   },
   "peerDependencies": {
     "@cuppy/core": "workspace:*"
-  }
+  },
+  "keywords": [
+    "cuppy",
+    "plugin",
+    "inflation",
+    "cpi-u",
+    "cpi"
+  ]
 }
