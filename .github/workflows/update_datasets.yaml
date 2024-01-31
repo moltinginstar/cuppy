@@ -25,9 +25,6 @@ jobs:
           git config --global user.name "Update Datasets Action"
           git config --global user.email ""
 
-      - name: Go to update script
-        run: cd $GITHUB_WORKSPACE/scripts/update-datasets
-
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
@@ -39,9 +36,11 @@ jobs:
           poetry-version: ${{ matrix.poetry-version }}
 
       - name: Install dependencies
+        working-directory: ${{ github.workspace }}/scripts/update-datasets
         run: poetry install
 
       - name: Update and commit datasets
+        working-directory: ${{ github.workspace }}/scripts/update-datasets
         run: poetry run python main.py
 
       - name: Commit changes
