@@ -51,4 +51,8 @@ jobs:
         working-directory: ${{ github.workspace }}/demo
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: pnpm run deploy
+        run: |
+          git config --global user.name "Release Action"
+          git config --global user.email ""
+
+          pnpm run deploy
