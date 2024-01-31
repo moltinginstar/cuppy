@@ -2,12 +2,12 @@ import asyncio
 import io
 import json
 import subprocess
-from datetime import datetime
+# from datetime import datetime
 from pathlib import Path
 
 import httpx
 import pandas as pd
-import semver
+# import semver
 
 
 PACKAGES_DIR = Path(__file__).parent.parent.parent / "datasets"
@@ -79,9 +79,10 @@ def update_package_metadata(dataset_package: str) -> None:
   with open(package_json, "r") as f:
     package = json.load(f)
 
-  version = semver.VersionInfo.parse(package["version"])
-  today = datetime.today().strftime("%Y%m%d")
-  package["version"] = str(version.replace(build=today))
+  # TODO: semantic-release doesn't support build metadata
+  # version = semver.VersionInfo.parse(package["version"])
+  # today = datetime.today().strftime("%Y%m%d")
+  # package["version"] = str(version.replace(build=today))
 
   with open(package_json, "w") as f:
     json_dump = json.dumps(package, indent=2)

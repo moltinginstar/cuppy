@@ -56,7 +56,7 @@ As per the [Semantic Versioning](https://semver.org/) specification, the version
 - Increment the minor version number when adding functionality in a backwards-compatible manner.
 - Increment the patch version number when making backwards-compatible bug fixes.
 
-Data updates are considered backwards-compatible feature additions, so they will increment the minor version number as well as setting the build number to the date of the update. This is taken care of automatically by the dataset updater script.
+Data updates are considered backwards-compatible feature additions, so they will increment the minor version number.
 
 ### Publishing
 
