@@ -166,7 +166,7 @@ Cuppy uses `Intl.NumberFormat` under the hood, so you can use any of the options
     </tr>
     <tr>
       <td><code>locale</code></td>
-      <td><code>navigator.languages</code></td>
+      <td><code>document.documentElement.lang</code></td>
       <td>The locale to use for formatting. Must be a valid BCP 47 language tag.</td>
     </tr>
   </tbody>

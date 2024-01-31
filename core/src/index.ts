@@ -109,7 +109,7 @@ const formatterCache: Record<string, Intl.NumberFormat> = {};
 
 const formatCurrency = (value: number, options: Partial<CuppyOptions>) => {
   const locale =
-    options.locale ?? defaults.locale ?? (navigator.languages as string[]);
+    options.locale ?? defaults.locale ?? document.documentElement.lang;
 
   const currency = "USD";
 
