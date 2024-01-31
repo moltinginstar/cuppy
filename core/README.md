@@ -141,8 +141,8 @@ Cuppy uses `Intl.NumberFormat` under the hood, so you can use any of the options
     </tr>
     <tr>
       <td><code>use-grouping</code></td>
-      <td><code>undefined</code></td>
-      <td>Whether to use grouping separators. Any non-null value will be treated as <code>true</code>.</td>
+      <td>Same as in <code>Intl.NumberFormat</code></td>
+      <td>Whether to use grouping separators. Any non-null value other than <code>"false"</code> (including an empty string) will be treated as <code>true</code>.</td>
     </tr>
     <tr>
       <td><code>precision-mode</code></td>

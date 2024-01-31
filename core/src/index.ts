@@ -115,7 +115,9 @@ const formatCurrency = (value: number, options: Partial<CuppyOptions>) => {
 
   const currencyDisplay = options.currencyStyle || defaults.currencyStyle;
 
-  const useGrouping = defaults.useGrouping ?? options.useGrouping != null;
+  const useGrouping =
+    defaults.useGrouping ??
+    (options.useGrouping != null && String(options.useGrouping) !== "false");
 
   const signDisplay = options.signDisplay || defaults.signDisplay;
 
