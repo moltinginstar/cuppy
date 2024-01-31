@@ -15,11 +15,6 @@ jobs:
       - name: Clone repo
         uses: actions/checkout@v4
 
-      - name: Configure git
-        run: |
-          git config --global user.name "Update Datasets Action"
-          git config --global user.email ""
-
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
@@ -36,8 +31,10 @@ jobs:
 
       - name: Update and commit datasets
         working-directory: ${{ github.workspace }}/scripts/update-datasets
-        run: poetry run python main.py
-
-      - name: Commit changes
         run: |
+          git config --global user.name "Update Datasets Action"
+          git config --global user.email ""
+
+          poetry run python main.py
+
           git push
