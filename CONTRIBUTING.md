@@ -44,7 +44,9 @@ The following directories are also present:
 
 ### Commit messages
 
-Commit messages must follow the [Conventional Commits](https://www.conventionalcommits.org/) specification.
+This project uses [`lerna version`](https://github.com/lerna/lerna/tree/main/libs/commands/version#--conventional-commits) to automatically generate release notes and publish new versions of the project.
+
+This means that commit messages must follow the [Conventional Commits](https://www.conventionalcommits.org/) specification.
 
 ### Versioning
 

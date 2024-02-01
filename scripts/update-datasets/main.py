@@ -102,7 +102,7 @@ async def update_package(
     update_package_metadata(dataset_package)
 
     subprocess.run(["git", "add", str(PACKAGES_DIR / dataset_package)], shell=True, check=True)
-    # "feat" is how semantic-release knows to create a release
+    # "feat" is how Lerna knows to create a release
     subprocess.run(["git", "commit", "-m", f"feat: update {dataset_package}"], shell=True, check=True)
   except Exception as e:
     print(f"Failed to update {dataset_name}: {e}")
