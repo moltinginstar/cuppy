@@ -11,6 +11,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
+[![npm](https://img.shields.io/npm/dw/@cuppy/core)](https://www.npmjs.com/package/@cuppy/core)
+[![Bundle size](https://img.shields.io/bundlejs/size/@cuppy/core)](https://www.npmjs.com/package/@cuppy/core)
 
 </div>
 
