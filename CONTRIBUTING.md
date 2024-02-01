@@ -44,9 +44,7 @@ The following directories are also present:
 
 ### Commit messages
 
-This project uses [`semantic-release`](https://github.com/semantic-release/semantic-release) to automatically generate release notes and publish new versions of the project.
-
-This means that commit messages must follow the [Conventional Commits](https://www.conventionalcommits.org/) specification.
+Commit messages must follow the [Conventional Commits](https://www.conventionalcommits.org/) specification.
 
 ### Versioning
 

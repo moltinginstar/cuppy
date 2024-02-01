@@ -79,7 +79,7 @@ def update_package_metadata(dataset_package: str) -> None:
   with open(package_json, "r") as f:
     package = json.load(f)
 
-  # TODO: semantic-release doesn't support build metadata
+  # TODO: build metadata
   # version = semver.VersionInfo.parse(package["version"])
   # today = datetime.today().strftime("%Y%m%d")
   # package["version"] = str(version.replace(build=today))

@@ -21,15 +21,14 @@
     "prepare": "husky"
   },
   "devDependencies": {
-    "@semantic-release/git": "^10.0.1",
     "@types/node": "^20.11.13",
     "camelcase": "^8.0.0",
     "conventional-changelog-conventionalcommits": "^7.0.2",
     "husky": "^9.0.7",
+    "lerna": "^8.0.2",
     "lint-staged": "^15.2.0",
     "prettier": "^3.2.4",
     "rimraf": "^5.0.5",
-    "semantic-release": "^23.0.0",
     "typescript": "^5.3.3",
     "vite": "^5.0.12",
     "vite-plugin-checker": "^0.6.2",

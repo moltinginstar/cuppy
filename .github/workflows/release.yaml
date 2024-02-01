@@ -46,7 +46,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: pnpm --recursive exec semantic-release
+        run: echo "TODO"
 
       - name: Deploy website
         uses: peaceiris/actions-gh-pages@v3
