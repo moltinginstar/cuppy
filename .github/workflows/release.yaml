@@ -51,7 +51,7 @@ jobs:
           git config --global user.name "Release"
           git config --global user.email ""
 
-          pnpm run release --yes
+          pnpm run release from-package --yes
 
       - name: Deploy website
         uses: peaceiris/actions-gh-pages@v3
