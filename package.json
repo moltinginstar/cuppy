@@ -18,6 +18,7 @@
     "dev": "pnpm run --parallel --stream dev",
     "build": "pnpm run --recursive --stream build",
     "clean": "pnpm run --parallel --stream clean",
+    "release": "pnpm lerna publish --conventional-commits",
     "prepare": "husky"
   },
   "devDependencies": {
@@ -31,7 +32,7 @@
     "rimraf": "^5.0.5",
     "typescript": "^5.3.3",
     "vite": "^5.0.12",
-    "vite-plugin-checker": "^0.6.2",
+    "vite-plugin-checker": "^0.6.3",
     "vite-plugin-dts": "^3.7.2"
   }
 }

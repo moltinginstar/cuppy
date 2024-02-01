@@ -16,6 +16,9 @@
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -46,5 +49,6 @@
     "NumberFormat",
     "CPI",
     "CPI-U"
-  ]
+  ],
+  "gitHead": "bb2177c4acd14d8f5f1a4268074da254b451236a"
 }
