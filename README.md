@@ -59,7 +59,7 @@ pnpm add @cuppy/core @cuppy/cpi-u
   data-inflation-dataset="cpiU"
   data-locale="en-NZ"
 >
-  25400000000
+  25_400_000_000
 </span>
 ```
 

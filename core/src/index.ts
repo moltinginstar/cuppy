@@ -230,13 +230,15 @@ const adjustForInflation = (
   };
 };
 
+const digitSeparator = /_/g;
+
 const cuppy = () => {
   const cuppies = document.querySelectorAll<HTMLElement>("[data-cuppy]");
   cuppies.forEach((el) => {
     const options = el.dataset;
     options.value ??= el.innerText;
 
-    const value = +options.value;
+    const value = +options.value.replace(digitSeparator, "");
 
     const from = +(options.from || defaults.from || currentYear);
     const to = +(options.to || defaults.to || currentYear);

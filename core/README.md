@@ -16,6 +16,10 @@ To mark an element as a Cuppy, add the `data-cuppy` attribute to it and provide 
 
 <!-- Via data-value -->
 <span data-cuppy data-value="25400000000"></span>
+
+<!-- Using underscores to separate thousands -->
+<span data-cuppy>25_400_000_000</span>
+<span data-cuppy data-value="25_400_000_000"></span>
 ```
 
 Then in your JavaScript, call the `cuppy` function to format all Cuppies on the page:
@@ -77,7 +81,7 @@ You can customize almost every aspect of the formatting by setting attributes on
   data-inflation-dataset="cpiU"
   data-locale="en-NZ"
 >
-  25400000000
+  25_400_000_000
 </span>
 ```
 
@@ -214,7 +218,7 @@ This will result in the following output:
   data-min-digits="4"
   data-max-digits="5"
 >
-  25400000000
+  25_400_000_000
 </span>
 <!-- 25.40 billion US dollars in 1969 (210.88 billion US dollars in 2023) -->
 ```
