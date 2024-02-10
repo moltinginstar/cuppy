@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.0](https://github.com/moltinginstar/cuppy/compare/@cuppy/core@1.0.0...@cuppy/core@1.1.0) (2024-02-10)
+
+### Features
+
+- underscore as digit separator ([cd3bcb7](https://github.com/moltinginstar/cuppy/commit/cd3bcb7b43c9b4849f60f1a7e12dcc822e26e29f))
+
 ## 1.0.0 (2024-02-01)
 
 ### ⚠ BREAKING CHANGES
