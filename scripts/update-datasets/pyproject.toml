@@ -2,16 +2,16 @@
 name = "update-datasets"
 version = "1.0.0"
 description = "Script to update the price index data for Cuppy"
-authors = ["moltinginstar"]
+authors = ["Sam <moltinginstar@gmail.com>"]
 license = "MIT"
 readme = "README.md"
 packages = [{include = "main"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
-httpx = "^0.26.0"
+httpx = "^0.28.1"
 pandas = "^2.2.0"
-pyarrow = "^15.0.0"
+pyarrow = "^18.1.0"
 semver = "^3.0.2"
 
 
