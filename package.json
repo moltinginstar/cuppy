@@ -12,7 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/moltinginstar/cuppy.git"
   },
-  "homepage": "https://moltinginstar.tech/cuppy",
+  "homepage": "https://moltinginstar.com/cuppy",
   "bugs": "https://github.com/moltinginstar/cuppy/issues",
   "scripts": {
     "dev": "pnpm run --parallel --stream dev",

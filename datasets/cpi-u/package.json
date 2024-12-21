@@ -25,7 +25,7 @@
     "url": "git+https://github.com/moltinginstar/cuppy.git",
     "directory": "datasets/cpi-u"
   },
-  "homepage": "https://moltinginstar.tech/cuppy",
+  "homepage": "https://moltinginstar.com/cuppy",
   "bugs": "https://github.com/moltinginstar/cuppy/issues",
   "scripts": {
     "dev": "vite build --watch",

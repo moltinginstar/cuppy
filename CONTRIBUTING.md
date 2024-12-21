@@ -33,7 +33,7 @@ Cuppy is structured as a monorepo managed using [`pnpm` workspaces](https://pnpm
 
 - [`core`](core) contains the main Cuppy library, `@cuppy/core`.
 - [`datasets`](datasets) contains the price index datasets used for inflation calculations, e.g., [`datasets/cpi-u`](datasets/cpi-u) is `@cuppy/cpi-u`.
-- [`demo`](demo) contains the code for the [Cuppy website](https://moltinginstar.tech/cuppy), `@cuppy/demo`.
+- [`demo`](demo) contains the code for the [Cuppy website](https://moltinginstar.com/cuppy), `@cuppy/demo`.
 
 The following directories are also present:
 
