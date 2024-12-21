@@ -22,17 +22,17 @@
     "prepare": "husky"
   },
   "devDependencies": {
-    "@types/node": "^20.11.13",
+    "@types/node": "^20.17.10",
     "camelcase": "^8.0.0",
     "conventional-changelog-conventionalcommits": "^7.0.2",
-    "husky": "^9.0.7",
-    "lerna": "^8.0.2",
-    "lint-staged": "^15.2.0",
-    "prettier": "^3.2.4",
-    "rimraf": "^5.0.5",
-    "typescript": "^5.3.3",
-    "vite": "^5.0.12",
-    "vite-plugin-checker": "^0.6.3",
-    "vite-plugin-dts": "^3.7.2"
+    "husky": "^9.1.7",
+    "lerna": "^8.1.9",
+    "lint-staged": "^15.2.11",
+    "prettier": "^3.4.2",
+    "rimraf": "^5.0.10",
+    "typescript": "^5.7.2",
+    "vite": "^5.4.11",
+    "vite-plugin-checker": "^0.8.0",
+    "vite-plugin-dts": "^4.4.0"
   }
 }
