@@ -19,12 +19,12 @@ DATASETS = {
     "url": "https://download.bls.gov/pub/time.series/cu/cu.data.1.AllItems",
     "columns": ["year", "period", "value"],
   },
-  "CWUR0000SA0": {
-    "description": "All items in U.S. city average, wage earners, not seasonally adjusted",
-    "package": "cpi-w",
-    "url": "https://download.bls.gov/pub/time.series/cw/cw.data.1.AllItems",
-    "columns": ["year", "period", "value"],
-  },
+  # "CWUR0000SA0": {
+  #   "description": "All items in U.S. city average, wage earners, not seasonally adjusted",
+  #   "package": "cpi-w",
+  #   "url": "https://download.bls.gov/pub/time.series/cw/cw.data.1.AllItems",
+  #   "columns": ["year", "period", "value"],
+  # },
 }
 
 HEADERS = {
@@ -101,9 +101,9 @@ async def update_package(
     await update_package_data(client, dataset_name, dataset_details)
     update_package_metadata(dataset_package)
 
-    subprocess.run(["git", "add", str(PACKAGES_DIR / dataset_package)], shell=True, check=True)
+    subprocess.run(f"git add {str(PACKAGES_DIR / dataset_package)}", shell=True, check=True)
     # "feat" is how Lerna knows to create a release
-    subprocess.run(["git", "commit", "-m", f"feat: update {dataset_package}"], shell=True, check=True)
+    subprocess.run(f"git commit -m 'feat: update {dataset_package}'", shell=True, check=True)
   except Exception as e:
     print(f"Failed to update {dataset_name}: {e}")
 
