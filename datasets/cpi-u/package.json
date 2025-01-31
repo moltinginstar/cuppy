@@ -2,7 +2,7 @@
   "name": "@cuppy/cpi-u",
   "description": "The CUUR0000SA0 dataset for Cuppy.",
   "author": "Sam <moltinginstar@gmail.com>",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "type": "module",
   "main": "dist/cuppy.umd.cjs",
   "module": "dist/cuppy.js",
