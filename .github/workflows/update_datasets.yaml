@@ -3,6 +3,7 @@ name: Update Datasets
 on:
   schedule:
     - cron: "0 0 31 1 *"
+  workflow_dispatch:
 
 jobs:
   update:
