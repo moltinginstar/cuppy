@@ -34,16 +34,16 @@ importers:
         version: 5.0.10
       typescript:
         specifier: ^5.7.2
-        version: 5.7.2
+        version: 5.7.3
       vite:
         specifier: ^5.4.11
         version: 5.4.12(@types/node@22.10.2)
       vite-plugin-checker:
         specifier: ^0.8.0
-        version: 0.8.0(typescript@5.7.2)(vite@5.4.12(@types/node@22.10.2))
+        version: 0.8.0(typescript@5.7.3)(vite@5.4.12(@types/node@22.10.2))
       vite-plugin-dts:
         specifier: ^4.4.0
-        version: 4.4.0(@types/node@22.10.2)(rollup@4.31.0)(typescript@5.7.2)(vite@5.4.12(@types/node@22.10.2))
+        version: 4.4.0(@types/node@22.10.2)(rollup@4.31.0)(typescript@5.7.3)(vite@5.4.12(@types/node@22.10.2))
 
   core: {}
 
@@ -2672,8 +2672,8 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  typescript@5.7.2:
-    resolution: {integrity: sha512-i5t66RHxDvVN40HfDd1PsEThGNnlMCMT3jMUuoh9/0TaqWevNontacunWyN02LA9/fIbEWlcHZcgTKb9QoaLfg==}
+  typescript@5.7.3:
+    resolution: {integrity: sha512-84MVSjMEHP+FQRPy3pX9sTVV/INIex71s9TL2Gm5FG/WG1SqXeKyZ0k7/blY/4FdOzI12CBy1vGc4og/eus0fw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -3043,7 +3043,7 @@ snapshots:
 
   '@jridgewell/sourcemap-codec@1.5.0': {}
 
-  '@lerna/create@8.1.9(encoding@0.1.13)(typescript@5.7.2)':
+  '@lerna/create@8.1.9(encoding@0.1.13)(typescript@5.7.3)':
     dependencies:
       '@npmcli/arborist': 7.5.4
       '@npmcli/package-json': 5.2.0
@@ -3061,7 +3061,7 @@ snapshots:
       console-control-strings: 1.1.0
       conventional-changelog-core: 5.0.1
       conventional-recommended-bump: 7.0.1
-      cosmiconfig: 9.0.0(typescript@5.7.2)
+      cosmiconfig: 9.0.0(typescript@5.7.3)
       dedent: 1.5.3
       execa: 5.0.0
       fs-extra: 11.2.0
@@ -3625,7 +3625,7 @@ snapshots:
       de-indent: 1.0.2
       he: 1.2.0
 
-  '@vue/language-core@2.1.10(typescript@5.7.2)':
+  '@vue/language-core@2.1.10(typescript@5.7.3)':
     dependencies:
       '@volar/language-core': 2.4.11
       '@vue/compiler-dom': 3.5.13
@@ -3636,7 +3636,7 @@ snapshots:
       muggle-string: 0.4.1
       path-browserify: 1.0.1
     optionalDependencies:
-      typescript: 5.7.2
+      typescript: 5.7.3
 
   '@vue/shared@3.5.13': {}
 
@@ -3998,14 +3998,14 @@ snapshots:
 
   core-util-is@1.0.3: {}
 
-  cosmiconfig@9.0.0(typescript@5.7.2):
+  cosmiconfig@9.0.0(typescript@5.7.3):
     dependencies:
       env-paths: 2.2.1
       import-fresh: 3.3.0
       js-yaml: 4.1.0
       parse-json: 5.2.0
     optionalDependencies:
-      typescript: 5.7.2
+      typescript: 5.7.3
 
   cross-spawn@7.0.6:
     dependencies:
@@ -4611,7 +4611,7 @@ snapshots:
 
   lerna@8.1.9(encoding@0.1.13):
     dependencies:
-      '@lerna/create': 8.1.9(encoding@0.1.13)(typescript@5.7.2)
+      '@lerna/create': 8.1.9(encoding@0.1.13)(typescript@5.7.3)
       '@npmcli/arborist': 7.5.4
       '@npmcli/package-json': 5.2.0
       '@npmcli/run-script': 8.1.0
@@ -4629,7 +4629,7 @@ snapshots:
       conventional-changelog-angular: 7.0.0
       conventional-changelog-core: 5.0.1
       conventional-recommended-bump: 7.0.1
-      cosmiconfig: 9.0.0(typescript@5.7.2)
+      cosmiconfig: 9.0.0(typescript@5.7.3)
       dedent: 1.5.3
       envinfo: 7.13.0
       execa: 5.0.0
@@ -4682,7 +4682,7 @@ snapshots:
       strong-log-transformer: 2.1.0
       tar: 6.2.1
       temp-dir: 1.0.0
-      typescript: 5.7.2
+      typescript: 5.7.3
       upath: 2.0.1
       uuid: 10.0.0
       validate-npm-package-license: 3.0.4
@@ -5766,7 +5766,7 @@ snapshots:
 
   typescript@5.4.2: {}
 
-  typescript@5.7.2: {}
+  typescript@5.7.3: {}
 
   ufo@1.5.4: {}
 
@@ -5806,7 +5806,7 @@ snapshots:
 
   validate-npm-package-name@5.0.1: {}
 
-  vite-plugin-checker@0.8.0(typescript@5.7.2)(vite@5.4.12(@types/node@22.10.2)):
+  vite-plugin-checker@0.8.0(typescript@5.7.3)(vite@5.4.12(@types/node@22.10.2)):
     dependencies:
       '@babel/code-frame': 7.26.2
       ansi-escapes: 4.3.2
@@ -5824,20 +5824,20 @@ snapshots:
       vscode-languageserver-textdocument: 1.0.12
       vscode-uri: 3.0.8
     optionalDependencies:
-      typescript: 5.7.2
+      typescript: 5.7.3
 
-  vite-plugin-dts@4.4.0(@types/node@22.10.2)(rollup@4.31.0)(typescript@5.7.2)(vite@5.4.12(@types/node@22.10.2)):
+  vite-plugin-dts@4.4.0(@types/node@22.10.2)(rollup@4.31.0)(typescript@5.7.3)(vite@5.4.12(@types/node@22.10.2)):
     dependencies:
       '@microsoft/api-extractor': 7.48.1(@types/node@22.10.2)
       '@rollup/pluginutils': 5.1.4(rollup@4.31.0)
       '@volar/typescript': 2.4.11
-      '@vue/language-core': 2.1.10(typescript@5.7.2)
+      '@vue/language-core': 2.1.10(typescript@5.7.3)
       compare-versions: 6.1.1
       debug: 4.4.0
       kolorist: 1.8.0
       local-pkg: 0.5.1
       magic-string: 0.30.17
-      typescript: 5.7.2
+      typescript: 5.7.3
     optionalDependencies:
       vite: 5.4.12(@types/node@22.10.2)
     transitivePeerDependencies:
